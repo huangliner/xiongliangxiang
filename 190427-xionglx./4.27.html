@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+// 			今天的作业:
+// 			(1)、编写一个函数，有两个参数，实现将参数的值转换为对象属性的值
+// 			例：f(1,2)===>返回{x:1,y:2}			
+			function f(x,y){
+				this.x=x;
+				this.y=y;
+				return {x:x,y:y};
+			}
+			console.log(f(1,2));
+						
+// 			(2)、编写函数实现两个数的四则运算
+			function f2(num1,operator,num2){
+				this.num1=num1;
+				this.operator=operator;
+				this.num2=num2;
+				return eval(this.num1+this.operator+this.num2);
+			}
+			console.log(f2(31,'*',33));
+			
+		</script>
+	</body>
+</html>
