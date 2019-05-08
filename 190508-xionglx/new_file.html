@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				height: 2400px;
+				background-image: url(img/u=2923944687,1151139690&fm=26&gp=0.jpg);
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var windowHeight = document.body.clientHeight;
+		var scrollHeight = 0;
+		var cont = 2;
+		function scroll(){
+			if(cont%2==0){
+				scrollHeight+=200;
+				window.scrollTo('',scrollHeight);
+				if(scrollHeight==windowHeight){
+					cont+=1;
+				}
+			}else{
+				scrollHeight-=200;
+				window.scrollTo('',scrollHeight);
+				if(scrollHeight==0){
+					cont+=1;
+				}
+			}
+		};
+		setInterval(scroll,100);
+	</script>
+</html>
