@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		var time = Number(new Date(2019,4,15,0,0,0));//目标时间
+		var nowTime = Date.now();//当前时间
+		var timediff=Math.round((time-nowTime)/1000);
+		//获取还剩多少天
+		var day=parseInt(timediff/3600/24);
+		//获取还剩多少小时
+		var hour=parseInt(timediff/3600%24);
+		//获取还剩多少分钟
+		var minute=parseInt(timediff/60%60);
+		//获取还剩多少秒
+		var second=timediff%60;
+		console.log("还剩"+day+"天"+hour+"时"+minute+"分"+second+"秒");
+	</script>
+</html>
