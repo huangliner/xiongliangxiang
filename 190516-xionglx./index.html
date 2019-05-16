@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#container{
+				width: 500px;
+				height: 500px;
+				background-color: aqua;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="position: relative;" id="container">
+			
+		</div>
+		<script type="text/javascript">
+			var parentNode=document.getElementById('container');
+			function Circle(options){
+				this._init(options);
+			}
+			Circle.prototype={
+				_init:function(options){
+					this.width=options.width||20;
+					this.height=options.height||20;
+					this.position='absolute';
+					this.top=options.top||0;
+					this.left=options.left||0;
+					this.backgroundColor=options.backgroundColor;
+					this.borderRadius=options.borderRadius;
+				},
+				render:function(){
+					
+					//创建子元素
+					var childNode=document.createElement('div');
+					//在parentNode下面创建子div元素
+					parentNode.appendChild(childNode);
+					childNode.style.width=this.width+'px';
+					childNode.style.height=this.height+'px';
+					childNode.style.top=this.top+'px';
+					childNode.style.left=this.left+'px';
+					childNode.style.backgroundColor=this.backgroundColor;
+					childNode.style.position=this.position;
+					childNode.style.borderRadius=this.borderRadius;
+				}
+			}
+			setInterval(function(){
+				var Tools={
+				//产生随机数
+				getRandom:function(min,max){
+					return Math.floor(Math.random()*(max-min))
+				},
+				}
+				var r=Tools.getRandom(0,255);
+				var g=Tools.getRandom(0,255);
+				var b=Tools.getRandom(0,255);
+				var x=Tools.getRandom(0,480);
+				var y=Tools.getRandom(0,480);
+				var circle=new Circle({
+				backgroundColor:'rgb('+r+','+g+','+b+')',
+				top:x,
+				left:y
+				});
+				
+				for (var i=0;i<parentNode.children.length;i++) {
+						parentNode.children[i].remove();
+				}
+			circle.render();
+			},1000)
+			
+			
+			
+			
+			
+		
+		
+		</script>
+	</body>
+</html>
